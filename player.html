@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./PY_files/font.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta property="og:title" content="FHZ隊員查詢">
+  <meta property="og:description" content="FREE FIRE FHZ ELITE">
+  <meta property="og:image" content="/網站封面.png">
+  <meta property="og:url" content="https://www.fhzelite.com">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/FHZ.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./PY_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <script src="./PY_files/bootstrap.bundle.min.js.下載" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500&family=Roboto&family=Orbitron:wght@400;700&display=swap");
+
+    html, body {
+      background-image: url("PNG/bg.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-color: #0c182a; /* 電競風格深藍色背景 */
+      font-family: 'GFF Latin', 'cwTeXYen', 'Noto Sans TC', sans-serif;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    
+    /* 保持原本的 container 樣式，但修改背景色以符合新風格 */
+    .container {
+      padding: 20px;
+      margin-top: 80px;
+      background-color: rgba(12, 24, 42, 0.7); /* 電競風格半透明背景 */
+      backdrop-filter: blur(5px);
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 199, 226, 0.3); /* 邊框發光效果 */
+    }
+    
+    .photos {
+      position: relative;
+      text-align: center;
+    }
+    .iframe-container {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      border: 3px solid #00c7e2; /* 霓虹藍邊框 */
+      margin-bottom: 10px;
+      box-shadow: 0 0 15px rgba(0, 199, 226, 0.7); /* 邊框發光效果 */
+    }
+    .iframe-container iframe {
+      width: 100%;
+      height: 700px;
+      border: none;
+    }
+    .record {
+      max-width: 100%;
+      margin: 20px 0;
+    }
+    .text-box {
+      margin: 0px auto;
+      padding: 10px;
+      background-color: rgba(12, 24, 42, 0.7); /* 深藍色半透明背景 */
+      color: #b3cde0; /* 淺藍色文字 */
+      font-family: 'GFF Latin', 'MS PGothic', Calibri, 'Trebuchet MS', sans-serif;
+      border-radius: 5px;
+      text-align: center;
+      max-width: 800px;
+      font-size: 1rem;
+    }
+    .warnbox {
+      background-color: #122131; /* 深藍色背景 */
+      padding: 20px;
+      text-align: center;
+    }
+    .warnbox button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #00c7e2; /* 霓虹藍按鈕 */
+      color: #0c182a;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+    .warnbox button:hover {
+      background-color: #f8dd00; /* 懸停時亮黃色 */
+      color: #0c182a;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-family: 'GFF Latin', 'MS PGothic', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    table, th, td {
+      border: 2px solid #1f364d; /* 藍黑色邊框 */
+    }
+    th, td {
+      padding: 10px;
+      text-align: center;
+      color: #ffffff;
+    }
+    th {
+      background-color: #1a2a40; /* 深藍色背景 */
+      color: #f8dd00; /* 亮黃色文字 */
+    }
+    
+    /* 導覽列和頁腳樣式 */
+    nav {
+      height:70px;
+    }
+    .navbar {
+      background-color: rgba(12, 24, 42, 0.8);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      transition: top 0.3s;
+      backdrop-filter: blur(5px);
+    }
+    li a {
+      display: block;
+      padding: 10px;
+      font-size: 20px;
+      color: #00c7e2;
+      text-align: center;
+      font-family: 'GFF Latin', 'cwTeXYen','Orbitron', sans-serif;
+      font-weight: 700;
+      text-decoration: none;   
+    }
+    li a:hover {
+      color: #ffffff;
+      background-color: #00c7e2;
+      box-shadow: 0 0 15px rgba(0, 199, 226, 0.5);
+    }
+    .navbar-toggler {
+      background-color: transparent;
+      border: 1px solid #00c7e2;
+    }
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba%280, 199, 226, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    }
+    .nav-link {
+      padding:20px;
+    }
+    .logo {
+      height: 60px;
+    }
+    @media (max-width:1000px){
+      nav {
+        height:auto;
+      }
+      .nav-link {
+        padding:10px;
+      }
+      .logo {
+        height:50px;
+      }
+    }
+    .Footer {
+      display: flex;
+      color: #ffffff;
+      font-family: 'GFF Latin', 'cwTeXYen',"Noto Sans TC";
+      font-weight: 300;
+      font-size: 16px;
+      text-align: center;
+      background-color: #0b151f;
+      justify-content: center;
+      align-items: center;
+      padding-top: 13px;
+      letter-spacing: 1px;
+    }
+  </style>
+  <title>FHZ隊員查詢</title>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="https://www.fhzelite.com"><img class="logo" height="80px" src="FHZ_files/FHZ1.png"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#linkbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="linkbar">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item"><a class="nav-link" href="https://www.fhzelite.com">主頁</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://www.fhzelite.com/sign.html">隊員簽到</a></li>
+            <li class="nav-item"><a class="nav-link" href="/">玩家資訊</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://www.tiktok.com/@fhz.elite">TikTok</a></li> 
+            <li class="nav-item"><a class="nav-link" href="https://www.instagram.com/fhz.elite">IG</a></li>        
+            <li class="nav-item"><a class="nav-link" href="https://line.me/R/ti/p/@726uqxpa">官方賴</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <br><br>
+  <div class="container">
+    <div class="iframe-container">
+      <iframe id="content-frame2" src="http://www.fhzelite.com/FHZ_SEARCH.html" style="height: 1250px;"></iframe>
+    </div>
+  </div>
+
+  <br><br>
+
+  <div class="Footer">
+    <p>©2025 FHZ 保留所有權利。</p>
+  </div>
+</body>
+</html>

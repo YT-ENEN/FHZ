@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta property="og:title" content="FHZ 官網">
+  <meta property="og:description" content="FREE FIRE FHZ ELITE">
+  <meta property="og:image" content="/網站封面.png">
+  <meta property="og:url" content="https://www.fhzelite.com">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/FHZ.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./FHZ_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <script src="./FHZ_files/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://www.enenlive.com/font.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/cwtexyen.css">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500&family=Roboto&family=Orbitron:wght@400;700&display=swap");
+
+    html, body {
+      background-image: url("PNG/bg.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-color: #0c182a;
+      font-family: 'GFF Latin', 'cwTeXYen', 'Noto Sans TC', sans-serif;
+      color: #ffffff;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .container_1 {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .photos {
+      max-width: 100%;
+      max-height: 100%;
+    }
+    .photos img {
+      width: 100%;
+      height: auto;
+      border: 3px solid #00c7e2;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 199, 226, 0.7);
+    }
+    .index {
+      max-width: 100%;
+      max-height:100%;
+    }
+    .index img {
+      width: 100%;
+      height: auto;
+    }
+    .Text {
+      color: #00c7e2;
+      font-size: 26px;
+      height: 84px;
+      font-weight: bold;
+      text-shadow: 0 0 10px rgba(0, 199, 226, 0.5);
+    }
+    .Footer {
+      display: flex;
+      color: #ffffff;
+      font-family: 'GFF Latin', 'cwTeXYen',"Noto Sans TC";
+      font-weight: 300;
+      font-size: 16px;
+      text-align: center;
+      background-color: #0b151f;
+      justify-content: center;
+      align-items: center;
+      padding-top: 13px;
+      letter-spacing: 1px;
+    }
+    /* 導覽列 */   
+    nav {
+      height:70px;
+    }
+    .navbar {
+      background-color: rgba(12, 24, 42, 0.8);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      transition: top 0.3s;
+      backdrop-filter: blur(5px);
+    }
+    li a {
+      display: block;
+      padding: 10px;
+      font-size: 20px;
+      color: #00c7e2;
+      text-align: center;
+      font-family: 'GFF Latin', 'cwTeXYen','Orbitron', sans-serif;
+      font-weight: 700;
+      text-decoration: none;   
+    }
+    li a:hover {
+      color: #ffffff;
+      background-color: #00c7e2;
+      box-shadow: 0 0 15px rgba(0, 199, 226, 0.5);
+    }
+    /* 修正導覽列按鈕樣式，確保圖示可見 */
+    .navbar-toggler {
+      background-color: transparent;
+      border: 1px solid #00c7e2;
+    }
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba%280, 199, 226, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    }
+    .nav-link {
+      padding:20px;
+    }
+    .logo {
+      height: 50px;
+    }
+    @media (max-width:1000px){
+      nav {
+        height:auto;
+      }
+      .nav-link {
+        padding:10px;
+      }
+      .logo {
+        height:50px;
+      }
+    }
+    /* 新增區塊樣式 */
+    .content-section {
+      background-color: rgba(12, 24, 42, 0.7);
+      backdrop-filter: blur(5px);
+      padding: 40px 20px;
+      margin-top: 50px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 199, 226, 0.3);
+      text-align: center;
+      max-width: 3000px;
+      width: 100%;
+    }
+    .section-title {
+      color: #f8dd00;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px rgba(248, 221, 0, 0.7);
+    }
+    .line-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 30px;
+      background-color: #00c7e2;
+      color: #0c182a;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: bold;
+      font-size: 1.2em;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(0, 199, 226, 0.7);
+    }
+    .line-button:hover {
+      background-color: #f8dd00;
+      color: #0c182a;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(248, 221, 0, 0.9);
+    }
+    /* 賽事表格樣式 */
+    #match-schedule {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      font-family: 'GFF Latin', 'cwTeXYen','Noto Sans TC', sans-serif;
+      text-align: left;
+      color: #e0e0e0;
+      font-weight: 600;
+    }
+    #match-schedule th, #match-schedule td {
+      border: 1px solid #1f364d;
+      padding: 12px 15px;
+    }
+    #match-schedule th {
+      background-color: #122131;
+      color: #f8dd00;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    #match-schedule tr:nth-child(even) {
+      background-color: #0c182a;
+    }
+    #match-schedule tr:hover {
+      background-color: #1a2a40;
+      color: #00c7e2;
+    }
+  </style>
+  <title>FHZ 官網</title>
+</head>
+<body>
+  <header>  
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="https://www.fhzelite.com"><img class="logo" height="80px" src="FHZ_files/FHZ1.png"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#linkbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="linkbar">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item"><a class="nav-link" href="/">主頁</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://www.fhzelite.com/sign.html">隊員簽到</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://www.fhzelite.com/player.html">玩家資訊</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://www.tiktok.com/@fhz.elite">TikTok</a></li> 
+            <li class="nav-item"><a class="nav-link" href="https://www.instagram.com/fhz.elite">IG</a></li>        
+            <li class="nav-item"><a class="nav-link" href="https://line.me/R/ti/p/@726uqxpa">官方賴</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>  
+  </header>
+  
+  <div class="container_1">  
+    <div class="index">
+      <img src="FHZ_files/FHZ.png" alt="標識">
+    </div>
+  </div>  
+
+  <div class="container">
+    <div class="photos">
+      <img class="record" src="PNG/001.png" alt="戰隊介紹">
+      <img src="PNG/戰隊簡介.png" width="1920" height="1080" alt="頻道主題">
+      <div class="00">　</div>
+      <div class="00">　</div>
+      <div class="00">　</div>
+      <img class="record" src="PNG/002.png" alt="計分規則">
+      <img src="PNG/戰隊規範.png" width="1920" height="1080" alt="積分表">
+      <div class="00">　</div>
+    </div>
+    <div class="Text"></div>
+    
+        <div class="content-section">
+      <h2 class="section-title">最新賽事資訊</h2>
+      <div class="table-responsive">
+        <table id="match-schedule">
+          <thead>
+            <tr>
+              <th>序號</th>
+              <th>日期</th>
+              <th>時間</th>
+              <th>轉播</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+      <a href="https://line.me/R/ti/p/@375kgavh" class="line-button" target="_blank">報名上帝專用 LINE</a>
+      <p style="margin-top:20px; color: #8cb1c9; font-size: 0.9em;">資料由 FHZ 即時更新。</p>
+    </div>
+
+        <div class="content-section">
+      <h2 class="section-title">加入官方 LINE</h2>
+      <p>加入官方 LINE 獲取最新消息與賽事通知！</p>
+      <a href="https://line.me/R/ti/p/@392dwztt" class="line-button" target="_blank">戰隊官方 LINE</a>
+    </div>
+  </div>
+  <br><br>
+  <div class="Footer">
+    <p>©2025 FHZ 保留所有權利。</p>
+  </div>
+  
+  <script>
+    // 這裡放 JavaScript 程式碼
+    const SHEET_ID = '1fF95ZOHAdiqsJv3WeKZmfo6YNGXx7SnFq3E5r9vT5Po';
+    const API_KEY = 'AIzaSyB0pjUimtoomamQ9BVPGwIB-36VNFlVlds';
+    
+    // 請在下方替換為你的試算表名稱（例如：'賽事排程'）和範圍
+    const sheetName = '賽事區';
+    const sheetRange = 'B2:E27'; // 包含日期、時間、主播的欄位，A欄到C欄
+    
+    const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${sheetName}!${sheetRange}?key=${API_KEY}`;
+
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        const tableBody = document.querySelector('#match-schedule tbody');
+        const rows = data.values;
+        
+        // 如果有資料，跳過第一行標題
+        if (rows && rows.length > 1) {
+          for (let i = 1; i < rows.length; i++) {
+            const row = rows[i];
+            const tr = document.createElement('tr');
+            
+            if (row[0] && row[1] && row[2]) { // 確保有足夠的資料
+              tr.innerHTML = `
+                <td>${row[0]}</td>
+                <td>${row[1]}</td>
+                <td>${row[2]}</td>
+                <td>${row[3]}</td>
+              `;
+              tableBody.appendChild(tr);
+            }
+          }
+        } else {
+          tableBody.innerHTML = '<tr><td colspan="3" style="text-align: center;">目前沒有賽事資訊。</td></tr>';
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+        document.querySelector('#match-schedule tbody').innerHTML = '<tr><td colspan="3" style="text-align: center; color: red;">載入資料失敗，請稍後再試。</td></tr>';
+      });
+      fetchData();
+      setInterval(fetchData, 15000); // 每15秒更新一次
+  </script>
+</body>
+</html>

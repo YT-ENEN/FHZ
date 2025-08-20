@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500&family=Roboto&display=swap");
+	
+
+
+html, body {
+    background-image: url("PNG/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-y;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+	  
+        
+.container {
+    display: flex;
+    flex-direction: column; /* 將排列方向設為垂直（由上到下） */
+    justify-content: flex-start; /* 對齊方式設為頂部對齊 */
+    align-items: center;
+}
+.container_1 {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+        
+.photos {
+    max-width: 100%;
+    max-height: 100%;
+			
+}
+        
+.photos img {
+    width: 100%;
+    height: auto;
+    border: 3px solid #C0C0C0;
+    border-radius: 10px;
+}
+
+.index {
+    max-width: 100%;
+    max-height:100%;
+}
+        
+.index img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+.Text{
+    color: #72bbff;
+    font-size: 26px;
+    height: 84px;
+}
+
+.Footer{
+    display: flex;
+    color: #FFFFFF;
+    font-family: "Noto Sans TC";
+    font-weight: 300;
+    font-size: 10px;
+    text-align: center;
+    background-color: #3F3F3F;
+    justify-content: center; /* 將文字水平置中 */
+    align-items: center;
+    padding-top: 13px;
+    letter-spacing: 1px;
+}
+
+
+
+
+
+
+/* 導覽列 */	
+	
+nav{
+    height:70px;
+}
+.navbar{
+    background-color: #72bbff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: top 0.3s;
+}
+
+
+li a {
+    display: block;
+    padding: 10px;
+    font-size: 20px;
+    color: #72bbff;
+    text-align: center;
+    font-family: "Noto Sans TC";
+    font-weight: 600;
+    text-decoration: none;
+   
+}
+
+li a:hover{
+    color:#FF0004 !important;
+    background-color: #5C5C5C;
+    
+}
+.navbar-toggler{
+    background-color: lightgray;
+}
+
+.nav-link {
+    padding:20px;
+}
+
+.logo{
+	height: 60px;
+}
+
+@media (max-width:500px){
+    nav{
+        height:auto;
+    }
+    .nav-link {
+        padding:10px;
+		
+    }
+	.logo{
+		height:40px;
+		
+	}
+}

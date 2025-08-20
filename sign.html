@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta property="og:title" content="FHZ ELITE簽到處">
+  <meta property="og:description" content="FREE FIRE FHZ ELITE">
+  <meta property="og:image" content="/網站封面.png">
+  <meta property="og:url" content="https://enentsel.github.io/FFTET/ENEN.html">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/FHZ.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href="./FHZ_files/bootstrap.min.css" rel="stylesheet">
+  <script src="./FHZ_files/bootstrap.bundle.min.js"></script>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/cwtexyen.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap">
+
+  <style>
+    /* ===== 全域背景與字型設定 ===== */
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-image: url("PNG/BG.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-color: #0c182a;
+      font-family: 'Orbitron', 'Noto Sans TC', 'cwTeXYen', sans-serif;
+      color: #ffffff;
+    }
+
+    /* ===== 導航列 (Navbar) ===== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    .navbar {
+      background-color: rgba(12, 24, 42, 0.8);
+      width: 100%;
+      backdrop-filter: blur(5px);
+    }
+    .navbar .nav-link {
+      font-family: 'Orbitron', 'Noto Sans TC', sans-serif;
+      color: #00c7e2;
+      font-weight: bold;
+      transition: all .3s;
+    }
+    .navbar .nav-link:hover {
+      background-color: #00c7e2;
+      color: #fff;
+      box-shadow: 0 0 15px rgba(0,199,226,.5);
+    }
+    .navbar-toggler {
+      border: 1px solid #00c7e2;
+    }
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0,199,226,1)' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    }
+    .logo {
+      height: 60px;
+    }
+
+    /* ===== 密碼輸入容器 (Password Box) ===== */
+    .password-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding-top: 70px;
+    }
+    .password-container {
+      background-color: rgba(12,24,42,0.8);
+      backdrop-filter: blur(5px);
+      padding: 40px;
+      border-radius: 15px;
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 0 20px rgba(0,199,226,0.5);
+    }
+    .password-container h2 {
+      color: #f8dd00;
+      margin-bottom: 20px;
+      font-size: 28px;
+      text-shadow: 0 0 10px rgba(248,221,0,.7);
+    }
+    .password-input {
+      width: 100%;
+      padding: 12px;
+      font-size: 18px;
+      margin-bottom: 20px;
+      background-color: rgba(255,255,255,0.2);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .password-input::placeholder { color: #e0e0e0; }
+    .password-input:focus {
+      outline: none;
+      background-color: rgba(255,255,255,0.3);
+    }
+    .password-container button {
+      padding: 12px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      font-family: 'Orbitron', 'Noto Sans TC', sans-serif;
+      color: #0c182a;
+      background-color: #00c7e2;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(0,199,226,.5);
+      transition: all .3s;
+    }
+    .password-container button:hover {
+      background-color: #f8dd00;
+      color: #0c182a;
+      box-shadow: 0 0 20px rgba(248,221,0,.9);
+    }
+
+    /* ===== Google 表單區域 (Google Form Section) ===== */
+    .form-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 100px 20px 40px;
+      min-height: 100vh;
+    }
+    .google-form {
+      width: 100%;
+      max-width: 1000px;
+    }
+    .google-form iframe {
+      width: 100%;
+      height: 85vh;
+      border: none;
+      overflow: hidden;
+      display: block;
+    }
+
+    /* ===== 手機響應 (RWD) ===== */
+    @media (max-width: 1000px) {
+      .nav-link { padding: 10px; }
+      .logo { height: 50px; }
+
+      /* 手機版導覽列選單置中 */
+      .navbar-collapse {
+        justify-content: center !important;
+      }
+      .navbar-nav {
+        text-align: center;
+      }
+      .navbar-nav .nav-item {
+        margin: 0 10px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .google-form iframe {
+        height: 100vh;
+      }
+    }
+    .Footer {
+      display: flex;
+      color: #ffffff;
+      font-family: 'GFF Latin', 'cwTeXYen',"Noto Sans TC";
+      font-weight: 300;
+      font-size: 16px;
+      text-align: center;
+      background-color: #0b151f;
+      justify-content: center;
+      align-items: center;
+      padding-top: 13px;
+      letter-spacing: 1px;
+    }
+  </style>
+  <title>BNT 簽到區</title>
+</head>
+<body>
+
+  <!-- 導覽列 -->
+  <header>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="https://www.fhzelite.com">
+          <img class="logo" src="FHZ_files/FHZ1.png" alt="BNT logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#linkbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="linkbar">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item"><a class="nav-link" href="https://www.fhzelite.com">主頁</a></li>
+            <li class="nav-item"><a class="nav-link" href="/">隊員簽到</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://www.fhzelite.com/player.html">玩家資訊</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://www.tiktok.com/@fhz.elite">TikTok</a></li> 
+            <li class="nav-item"><a class="nav-link" href="https://www.instagram.com/fhz.elite">IG</a></li>        
+            <li class="nav-item"><a class="nav-link" href="https://line.me/R/ti/p/@726uqxpa">官方賴</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 密碼輸入區塊 -->
+  <div class="password-wrapper" id="password-wrapper">
+    <div class="password-container">
+      <h2>請輸入密碼以進入網站</h2>
+      <input type="password" id="password" class="password-input" placeholder="輸入密碼">
+      <button onclick="checkPassword()">確認</button>
+    </div>
+  </div>
+
+  <!-- 表單區塊 -->
+  <div class="form-wrapper" id="form-wrapper" style="display: none;">
+    <div class="google-form">
+      <iframe src="https://forms.gle/L4dkphYxH9kv9WWJA"></iframe>
+    </div>
+  </div>
+
+  <script>
+    const correctPassword = "24865678"; 
+    function checkPassword() {
+      if (document.getElementById('password').value === correctPassword) {
+        document.getElementById('password-wrapper').style.display = 'none';
+        document.getElementById('form-wrapper').style.display = 'flex';
+      } else {
+        alert('密碼錯誤！將被重定向到主頁...');
+        window.location.href = 'https://www.fhzelite.com';
+      }
+    }
+  </script>
+  <div class="Footer">
+    <p>©2025 FHZ 保留所有權利。</p>
+  </div>
+</body>
+</html>
