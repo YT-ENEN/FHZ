@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="./PY_files/font.css">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta property="og:title" content="FHZ 官網">
-  <meta property="og:description" content="FREE FIRE FHZ ELITE">
+  <meta property="og:title" content="FHZ上帝賽事資料查詢">
+  <meta property="og:description" content="BRANDNEWTEAM，簡稱:BNT。">
   <meta property="og:image" content="/網站封面.png">
   <meta property="og:url" content="https://www.fhzelite.com">
   <meta property="og:type" content="website">
-  <link rel="icon" href="/FHZ.ico" type="image/x-icon">
+  <link rel="icon" href="https://ico.enenlive.com/BNT.ico" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./FHZ_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-  <script src="./FHZ_files/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://www.enenlive.com/font.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/cwtexyen.css">
+  <link href="./PY_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <script src="./PY_files/bootstrap.bundle.min.js.下載" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  <title>BNT 上帝賽事資料查詢</title>
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500&family=Roboto&family=Orbitron:wght@400;700&display=swap");
 
@@ -34,11 +34,13 @@
       width: 100%;
       z-index: 1000;
     }
+    /* 修正：為主要內容區塊增加上邊距，避免被固定導覽列遮擋 */
     .container {
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
+      padding-top: 100px; /* 騰出空間 */
     }
     .container_1 {
       height: 100vh;
@@ -96,6 +98,18 @@
       width: 100%;
       transition: top 0.3s;
       backdrop-filter: blur(5px);
+    }
+    /* 提高權重以覆蓋 Bootstrap 的預設顏色，確保為藍綠色 */
+    .navbar-nav .nav-item .nav-link { 
+      display: block;
+      padding: 10px;
+      font-size: 20px;
+      color: #00c7e2; /* 藍綠色 */
+      text-align: center;
+      font-family: 'GFF Latin', 'cwTeXYen','Orbitron', sans-serif;
+      font-weight: 700;
+      text-decoration: none; 
+      padding:20px; /* 沿用原本 nav-link 的 padding */
     }
     li a {
       display: block;
@@ -201,12 +215,85 @@
       background-color: #1a2a40;
       color: #00c7e2;
     }
+    .iframe-container {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      border: 3px solid #ddd;
+      margin-bottom: 10px;
+    }
+
+    .iframe-container iframe {
+      width: 100%;
+      height: 700px; /* 手動設置高度 */
+      border: none;
+    }
+
+    .record {
+      max-width: 100%;
+      margin: 20px 0;
+    }
+
+    .text-box {
+      margin: 0px auto;
+      padding: 10px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      font-family: 'GFF Latin', 'MS PGothic', Calibri, 'Trebuchet MS', sans-serif;
+      border-radius: 5px;
+      text-align: center;
+      max-width: 800px;
+      font-size: 1rem;
+    }
+
+    .warnbox {
+      background-color: #3a3a3a;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .warnbox button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #C09AD9;
+      color: rgb(255, 255, 255);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .warnbox button:hover {
+      background-color: #7E84C6;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-family: 'GFF Latin', 'MS PGothic', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    table, th, td {
+      border: 2px solid #ddd;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    th {
+      background-color: #606060;
+    }
   </style>
-  <title>FHZ 官網</title>
 </head>
 <body>
-  <header>  
-    <nav class="navbar navbar-expand-lg">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="https://www.fhzelite.com"><img class="logo" height="80px" src="FHZ_files/FHZ1.png"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#linkbar">
@@ -224,102 +311,19 @@
           </ul>
         </div>
       </div>
-    </nav>  
+    </nav>
   </header>
   
-  <div class="container_1">  
-    <div class="index">
-      <img src="FHZ_files/FHZ.png" alt="標識">
-    </div>
-  </div>  
-
   <div class="container">
-    <div class="photos">
-      <img class="record" src="PNG/001.png" alt="戰隊介紹">
-      <img src="PNG/戰隊簡介.png" width="1920" height="1080" alt="頻道主題">
-      <div class="00">　</div>
-      <div class="00">　</div>
-      <div class="00">　</div>
-      <img class="record" src="PNG/002.png" alt="計分規則">
-      <img src="PNG/戰隊規範.png" width="1920" height="1080" alt="積分表">
-      <div class="00">　</div>
-    </div>
-    <div class="Text"></div>
-    
-        <div class="content-section">
-      <h2 class="section-title">最新賽事資訊</h2>
-      <div class="table-responsive">
-        <table id="match-schedule">
-          <thead>
-            <tr>
-              <th>序號</th>
-              <th>日期</th>
-              <th>時間</th>
-              <th>轉播</th>
-            </tr>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
-      </div>
-      <a href="https://line.me/R/ti/p/@375kgavh" class="line-button" target="_blank">報名上帝專用 LINE</a>
-      <p style="margin-top:20px; color: #8cb1c9; font-size: 0.9em;">資料由 FHZ 即時更新。</p>
-    </div>
-
-        <div class="content-section">
-      <h2 class="section-title">加入官方 LINE</h2>
-      <p>加入官方 LINE 獲取最新消息與賽事通知！</p>
-      <a href="https://line.me/R/ti/p/@726uqxpa" class="line-button" target="_blank">戰隊官方 LINE</a>
+    <div class="iframe-container">
+      <iframe id="content-frame2" src="https://www.fhzelite.com/league_search.php" style="height: 1250px;"></iframe>
     </div>
   </div>
+
   <br><br>
-  <div class="Footer">
-    <p>©2025 FHZ 保留所有權利。</p>
-  </div>
-  
-  <script>
-    // 這裡放 JavaScript 程式碼
-    const SHEET_ID = '1fF95ZOHAdiqsJv3WeKZmfo6YNGXx7SnFq3E5r9vT5Po';
-    const API_KEY = 'AIzaSyB0pjUimtoomamQ9BVPGwIB-36VNFlVlds';
-    
-    // 請在下方替換為你的試算表名稱（例如：'賽事排程'）和範圍
-    const sheetName = '賽事區';
-    const sheetRange = 'B2:E27'; // 包含日期、時間、主播的欄位，A欄到C欄
-    
-    const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${sheetName}!${sheetRange}?key=${API_KEY}`;
 
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        const tableBody = document.querySelector('#match-schedule tbody');
-        const rows = data.values;
-        
-        // 如果有資料，跳過第一行標題
-        if (rows && rows.length > 1) {
-          for (let i = 1; i < rows.length; i++) {
-            const row = rows[i];
-            const tr = document.createElement('tr');
-            
-            if (row[0] && row[1] && row[2]) { // 確保有足夠的資料
-              tr.innerHTML = `
-                <td>${row[0]}</td>
-                <td>${row[1]}</td>
-                <td>${row[2]}</td>
-                <td>${row[3]}</td>
-              `;
-              tableBody.appendChild(tr);
-            }
-          }
-        } else {
-          tableBody.innerHTML = '<tr><td colspan="3" style="text-align: center;">目前沒有賽事資訊。</td></tr>';
-        }
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-        document.querySelector('#match-schedule tbody').innerHTML = '<tr><td colspan="3" style="text-align: center; color: red;">載入資料失敗，請稍後再試。</td></tr>';
-      });
-      fetchData();
-      setInterval(fetchData, 15000); // 每15秒更新一次
-  </script>
+  <div class="Footer">
+    <p>©2025 BNT 保留所有權利。</p>
+  </div>
 </body>
 </html>
